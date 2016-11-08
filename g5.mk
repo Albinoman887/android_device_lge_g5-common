@@ -119,6 +119,10 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
+# Quick Charging 3.0
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.usb.hvdcp.detect=true
+
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
