@@ -62,11 +62,6 @@ on early-boot
     write /sys/module/peripheral_loader/parameters/proxy_timeout_ms ${persist.sys.pil_proxy_timeout}
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
-    
-    service set_baseband /system/bin/sh /system/etc/set_baseband.sh
-    class late_start
-    user root
-    seclabel u:r:set_baseband:s0
 
 on boot
     # Create QMUX deamon socket area
@@ -339,7 +334,6 @@ on boot
 
 on property:sys.boot_completed=1
     write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
-    start set_baseband
 
 service conn_init /system/bin/hwaddrs
     class core
@@ -652,6 +646,14 @@ service imsdatadaemon /system/bin/imsdatadaemon
     socket ims_datad stream 0660 system radio
     group system wifi radio inet net_raw log diag net_admin
     disabled
+
+service baseband-sh /system/bin/sh /init.baseband.sh
+    class main
+    user root
+    seclabel u:r:set_baseband:s0
+
+on property:gsm.version.baseband=""
+    start baseband-sh
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
