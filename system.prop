@@ -125,6 +125,8 @@ persist.radio.ignore_dom_time=5
 persist.radio.hw_mbn_update=0
 persist.radio.sw_mbn_update=0
 persist.radio.start_ota_daemon=1
+ro.ril.telephony.mqanelements=5 \
+ro.telephony.ril_class=LgeLteRIL
 
 # RmNet Data
 persist.rmnet.data.enable=true
