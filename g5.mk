@@ -253,6 +253,12 @@ PRODUCT_PACKAGES += \
     power.msm8996 \
     thermal.msm8996
 
+# QMI
+PRODUCT_PACKAGES += \
+		 dsi_config.xml \
+		 netmgr_config.xml \
+		 qmi_config.xml
+
 # RIL
 PRODUCT_PACKAGES += \
     liblge \
