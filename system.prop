@@ -99,7 +99,6 @@ ro.vendor.extension_library=libqti-perfd-client.so
 
 # RIL
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-ro.ril.telephony.mqanelements=4
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
 persist.rild.nitz_long_ons_1=
