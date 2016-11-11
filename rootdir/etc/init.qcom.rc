@@ -68,6 +68,9 @@ on early-boot
     user root
     seclabel u:r:set_baseband:s0
 
+    on property:gsm.version.baseband=""
+    start set_baseband
+    
 on boot
     # Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -339,7 +342,6 @@ on boot
 
 on property:sys.boot_completed=1
     write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
-    start baseband-sh
 
 service conn_init /system/bin/hwaddrs
     class core
