@@ -178,27 +178,6 @@ TARGET_RIL_VARIANT := caf
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    file.te \
-    fingerprintd.te \
-    genfs_contexts \
-    hwaddrs.te \
-    init.te \
-    location.te \
-    peripheral_manager.te \
-    property_contexts \
-    property.te \
-    qmuxd.te \
-    qti_init_shell.te \
-    radio.te \
-    sensors.te \
-    system_app.te \
-    system_server.te \
-    thermal_engine.te \
-    ueventd.te \
-    vold.te
-
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 

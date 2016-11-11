@@ -1,5 +1,5 @@
 # Baseband
-/system/etc/init.baseband.sh                                         u:object_r:set_baseband_exec:s0
+/system/etc/set_baseband.sh                                         u:object_r:set_baseband_exec:s0
 
 # Bluetooth
 /system/bin/hwaddrs                                                 u:object_r:hwaddrs_exec:s0

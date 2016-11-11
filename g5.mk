@@ -132,8 +132,8 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.usb.rc \
     init.target.rc \
-    ueventd.qcom.rc \
-    init.baseband.sh
+    set_baseband.sh \
+    ueventd.qcom.rc
 
 # Display
 PRODUCT_PACKAGES += \
