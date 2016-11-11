@@ -84,7 +84,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
+BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 
 # Offmode Charging
@@ -202,11 +202,8 @@ BOARD_SEPOLICY_UNION += \
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
-ifneq ($(HOST_OS),darwin)
-  SDCLANG := true
-  SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
-  SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
-endif
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
 
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
