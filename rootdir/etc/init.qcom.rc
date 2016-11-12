@@ -794,11 +794,6 @@ service qti /system/vendor/bin/qti
     group radio net_raw qcom_diag usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
-service qcom-sh /system/bin/sh /init.qcom.sh
-    class late_start
-    user root
-    oneshot
-
 service sensor-sh /system/bin/sh /init.qcom.sensors.sh
     class core
     user root
